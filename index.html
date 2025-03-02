@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevBoard</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
+   
+
+<style>
+  .poppins-regular {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+</style>
+</head>
+<body class="bg-[#F4F7FF] poppins-regular ">
+    <div class="px-32 py-6 grid grid-cols-4 gap-4">
+        <div class="col-span-4 rounded-xl bg-white h-24 p-4 flex items-center justify-between ">
+            <!-- 01 -->
+<div class="flex gap-4 items-center">
+    <img src="assets/logo.png" alt="">
+    <h1 class="text-4xl">Dev<span class="font-bold">Board</span></h1>
+</div>
+<div class="flex gap-7">
+    <div class="flex px-5 py-2 gap-2 bg-[#F4F7FF] w-28 rounded-3xl  items-center">
+        <img class="h-7" src="assets/checkbox.png" alt="">
+        <span id="taskI" class="font-bold text-3xl">23</span>
+    </div>
+    <button id="backgroundClr" class="bg-[#F4F7FF] p-3 cursor-pointer rounded-full">
+        <img src="assets/theme-btn.png" alt="">
+    </button>
+</div>
+        </div>
+
+<!-- 2 -->
+
+
+        <div class="rounded-xl  col-span-3 bg-white p-4">
+
+        <div class=" grid grid-cols-4 gap-4 ">
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-5 py-6 flex items-center rounded-xl">
+                <button class="bg-white  p-3 rounded-full">
+                    <img src="assets/checkbox.png" alt="">
+                </button>
+                <div>
+                    <h2  class="text-sm">Task Assigned</h2>
+                    <span class="font-bold text-3xl">0<span id="taskD">6</span></span>
+                </div>
+            </div>
+            <div id="discover" class="col-span-2 cursor-pointer bg-linear-to-r from-blue-500 to-blue-300 rounded-xl flex items-center gap-4 px-10">
+                <img src="assets/board.png" alt="">
+                <h2 class="text-xl text-white">Discover Something <br> New Today!</h2>
+
+            </div>
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-4 py-6 flex items-center rounded-xl">
+                <button class="bg-white  p-3 rounded-full">
+                    <img src="assets/calender.png" alt="">
+                </button>
+                
+                <div >
+                    <span id="day"></span><br>
+                    <span id="date"></span>
+                </div>
+                
+                <!-- <div id="date"></div> -->
+
+            </div>
+
+        </div>
+        <br> <br>
+        <div class="grid grid-cols-3 gap-4">
+            <!-- shopease -->
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-5 py-6 items-center rounded-xl space-y-4 task-card">
+            <button class="rounded-md px-4 py-1 bg-white">ShopEase</button>
+            <h1 class="font-semibold text-xl">Fix Mobile Button Issue</h1>
+            <p class="bg-white rounded-md   p-4 text-gray-400">Debug using Chrome DevTools, check for overlapping elements, and ..</p>
+
+            <div class="flex items-center gap-4">
+               <div>
+                <h3 class="text-gray-400 text-xs">Deadline</h3>
+                <h3 class="text-sm">21 March 2025</h3>
+               </div>
+                <button class="rounded-md bg-blue-500 text-white px-5 py-1 cursor-pointer disable complete-button" onclick="btn(this)">Completed</button>
+            </div>
+            
+            </div>
+            <!-- CloudSync -->
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-5 py-6 items-center rounded-xl space-y-4 task-card">
+            <button class="rounded-md px-4 py-1 bg-white">CloudSync</button>
+            <h1 class="font-semibold text-xl">Add Dark Mode</h1>
+            <p class="bg-white rounded-md   p-4 text-gray-400">Store the user's preference in localStorage, update CSS variables dynamically, and ..</p>
+
+            <div class="flex items-center gap-4">
+               <div>
+                <h3 class="text-gray-400 text-xs">Deadline</h3>
+                <h3 class="text-sm">21 March 2025</h3>
+               </div>
+                <button class="rounded-md bg-blue-500 text-white px-5 py-1 cursor-pointer disable complete-button" onclick="btn(this)" >Completed</button>
+            </div>
+            
+            </div>
+            <!-- SwiftPay -->
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-5 py-6 items-center rounded-xl space-y-4 task-card">
+            <button class="rounded-md px-4 py-1 bg-white">SwiftPay</button>
+            <h1 class="font-semibold text-xl">Optimize  Home page </h1>
+            <p class="bg-white rounded-md   p-4 text-gray-400">Debug using Chrome DevTools, check for overlapping elements, and ..</p>
+
+            <div class="flex items-center gap-4">
+               <div>
+                <h3 class="text-gray-400 text-xs">Deadline</h3>
+                <h3 class="text-sm">21 March 2025</h3>
+               </div>
+                <button class="rounded-md bg-blue-500 text-white px-5 py-1 cursor-pointer disable complete-button" onclick="btn(this)">Completed</button>
+            </div>
+            
+            </div>
+            <!-- Meta -->
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-5 py-6 items-center rounded-xl space-y-4 task-card">
+            <button class="rounded-md px-4 py-1 bg-white">Meta</button>
+            <h1 class="font-semibold text-xl">Add new emoji 🤲</h1>
+            <p class="bg-white rounded-md   p-4 text-gray-400">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works..</p>
+
+            <div class="flex items-center gap-4">
+               <div>
+                <h3 class="text-gray-400 text-xs">Deadline</h3>
+                <h3 class="text-sm">21 March 2025</h3>
+               </div>
+                <button class="rounded-md bg-blue-500 text-white px-5 py-1 cursor-pointer disable complete-button" onclick="btn(this)">Completed</button>
+            </div>
+            
+            </div>
+            <!-- Google LLC -->
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-5 py-6 items-center rounded-xl space-y-4 task-card">
+            <button class="rounded-md px-4 py-1 bg-white">Google LLC</button>
+            <h1 class="font-semibold text-xl">Integrate OpenAI API </h1>
+            <p class="bg-white rounded-md   p-4 text-gray-400">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works..</p>
+
+            <div class="flex items-center gap-4">
+               <div>
+                <h3 class="text-gray-400 text-xs">Deadline</h3>
+                <h3 class="text-sm">21 March 2025</h3>
+               </div>
+                <button class="rounded-md bg-blue-500 text-white px-5 py-1 cursor-pointer disable complete-button" onclick="btn(this)">Completed</button>
+            </div>
+            
+            </div>
+            <!-- Glassdoa -->
+            <div class="col-span-1 gap-4 bg-[#F4F7FF] px-5 py-6 items-center rounded-xl space-y-4 task-card">
+            <button class="rounded-md px-4 py-1 bg-white">Glassdoa</button>
+            <h1 class="font-semibold text-xl">Improve Job searching </h1>
+            <p class="bg-white rounded-md   p-4 text-gray-400">Debug using Chrome DevTools, check for overlapping elements, and ensure onClick works..</p>
+
+            <div class="flex items-center gap-4">
+               <div>
+                <h3 class="text-gray-400 text-xs">Deadline</h3>
+                <h3 class="text-sm">21 March 2025</h3>
+               </div>
+                <button class="rounded-md bg-blue-500 text-white px-5 py-1 cursor-pointer disable complete-button" onclick="btn(this)">Completed</button>
+            </div>
+            
+            </div>
+
+
+        </div>
+
+        
+
+
+        </div>
+
+        <!-- 3 -->
+        <div class="rounded-xl col-span-1  bg-white space-y-4 py-4 px-4" >
+            <div class="flex  items-center gap-4 px-15"> 
+                <img src="assets/activity.png" alt="">
+                <h3 class="font-semibold text-lg">Activity Log</h3>
+                
+            </div>
+            <button id="clear-history" class="mx-20 rounded-md bg-blue-500 text-white w-30 px-1 py-1 cursor-pointer">Clear History</button>
+
+            <div id="message-container"></div>
+        </div>
+      </div>
+
+     
+
+      <script>
+        let taskD = 6;
+        let taskI = 23;
+        function btn(button){
+            alert("Board updated successfully.")
+
+            if(taskD || taskI > 0)
+        {
+            // alert("Board updated successfully.")
+            taskD--;
+            document.getElementById("taskD").innerText = taskD;
+
+            taskI++;
+            document.getElementById("taskI").innerText = taskI;
+            if (taskD === 0)
+        {
+            alert('All task are completed');
+        }
+           
+        button.classList.add('bg-gray-300', 'text-gray-600', 'cursor-not-allowed');
+      button.disabled = true;
+
+    
+  const taskCard = button.closest('.task-card');
+  const title = taskCard.querySelector('h1').textContent;
+  const now = new Date();
+  const time = now.toLocaleTimeString();
+
+  const message = `You have completed "${title}" at ${time}.`;
+  const messageContainer = document.getElementById('message-container');
+  const messageDiv = document.createElement('div');
+  messageDiv.className = 'bg-[#F4F7FF] p-4 mb-2 rounded'; 
+  messageDiv.textContent = message;
+  messageContainer.appendChild(messageDiv);
+
+
+  document.getElementById('clear-history').addEventListener('click', function() {
+  document.getElementById('message-container').innerHTML = '';
+});
+
+
+ }
+        
+       
+
+
+
+        }
+      </script>
+
+      <script src="discover.js"></script>
+      <!-- <script src="button.js"></script> -->
+       <script src="date.js"></script>
+       <script src="changebg.js"></script>
+</body>
+</html>
