@@ -12,7 +12,7 @@ function btn(button) {
         document.getElementById("taskI").innerText = taskI;
 
         if (taskD === 0) {
-            alert('All tasks are completed');
+            alert('Congrates!!! You Have completed all the current tasks.');
         }
 
         button.classList.add('bg-gray-300', 'text-gray-600', 'cursor-not-allowed');
@@ -31,8 +31,6 @@ function btn(button) {
         messageContainer.appendChild(messageDiv);
     }
 }
-
-
 document.getElementById('clear-history').addEventListener('click', function() {
-    document.getElementById('message-container').innerHTML = '';
+document.getElementById('message-container').innerHTML = '';
 });
