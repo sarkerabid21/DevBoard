@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevBoard</title>
+    <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=ADLaM+Display&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Sora:wght@100..800&display=swap" rel="stylesheet">
@@ -18,8 +19,8 @@
 
 </head>
 
-<body class="bg-[#F4F7FF] poppins-regular ">
-    <div class="px-32 py-6 grid grid-cols-4 gap-4 ">
+<body class="lg:bg-[#F4F7FF] poppins-regular ">
+    <div class="px-32 py-6 grid grid-cols-4 gap-4 hidden lg:block">
         <div class="col-span-4 rounded-xl bg-white h-24 p-4 flex items-center justify-between shadow-md ">
             <!-- 01 -->
 <div class="flex gap-4 items-center">
@@ -66,8 +67,6 @@
                     <span id="day"></span><br>
                     <span id="date"></span>
                 </div>
-                
-                <!-- <div id="date"></div> -->
 
             </div>
 
@@ -186,57 +185,58 @@
         </div>
       </div>
 
-     
-<!-- 
-      <script>
-        let taskD = 6;
-        let taskI = 23;
-        function btn(button){
-            alert("Board updated successfully.")
+      <div class="w-full  justify-center min-h-screen bg-gray-100 p-4">
+      
+        <h3 class="text-center font-extrabold  text-xl md:text-2xl   p-4">
+            since you're viewing this on a small device, let's enjoy some nature views.
+        </h3>
 
-            if(taskD || taskI > 0)
-        {
-            // alert("Board updated successfully.")
-            taskD--;
-            document.getElementById("taskD").innerText = taskD;
-
-            taskI++;
-            document.getElementById("taskI").innerText = taskI;
-            if (taskD === 0)
-        {
-            alert('All task are completed');
-        }
-           
-        button.classList.add('bg-gray-300', 'text-gray-600', 'cursor-not-allowed');
-      button.disabled = true;
-
+        <div class="container">
+            <div class="panel active" style="background-image: url('https://images.unsplash.com/photo-1558979158-65a1eaa08691?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+                <h3>Explore The World</h3>
+            </div>
     
-  const taskCard = button.closest('.task-card');
-  const title = taskCard.querySelector('h1').textContent;
-  const now = new Date();
-  const time = now.toLocaleTimeString();
-
-  const message = `You have completed "${title}" at ${time}.`;
-  const messageContainer = document.getElementById('message-container');
-  const messageDiv = document.createElement('div');
-  messageDiv.className = 'bg-[#F4F7FF] p-4 mb-2 rounded'; 
-  messageDiv.textContent = message;
-  messageContainer.appendChild(messageDiv);
-
-
-  document.getElementById('clear-history').addEventListener('click', function() {
-  document.getElementById('message-container').innerHTML = '';
-});
-
-
- }
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1572276596237-5db2c3e16c5d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+                <h3>Wild Forest</h3>
+            </div>
+    
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80');">
+                <h3>Sunny Beach</h3>
+            </div>
+    
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1551009175-8a68da93d5f9?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80');">
+                <h3>City on Nature</h3>
+            </div>
+    
+            <div class="panel"
+                style="background-image: url('https://images.unsplash.com/photo-1549880338-65ddcdfd017b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80');">
+                <h3>Mountains - Clouds</h3>
+            </div>
+            
+        </div>
         
-       
 
+    </div>
 
+    <script>
+        const panels = document.querySelectorAll('.panel');
 
-        }
-      </script> -->
+panels.forEach(panel => {
+    panel.addEventListener('click', () => {
+        removeActiveClasses();
+        panel.classList.add('active');
+    })
+})
+
+function removeActiveClasses(){
+    panels.forEach(panel => {
+        panel.classList.remove('active');
+    })
+}
+    </script>
 
       <script src="discover.js"></script>
       <script src="button.js"></script>
